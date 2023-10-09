@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>infinite</title>
+</head>
+
+	<style type="text/css">
+
+		body, section, img, h1, p, div, {margin: 0; padding: 0; }
+		
+		body {perspective:300px; background: rgb(0,0,0); background-color: #000000; width: 100vw; height: 100vh; overflow:hidden;}
+		
+		section{ width: 100vw; height: 100vh; background-color:transparent;overflow: hidden;}
+		
+		img{display: block; position: absolute; width:10px; animation: r 13s linear forwards; opacity: 50%; z-index: -20px; }
+		
+		.absolute {position: absolute; display: block;}
+		.grid{display: grid; 	
+			 		grid-template-rows: 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px; 
+					grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+					gap: 0px 0px ; }
+		
+		
+
+		@keyframes r { to{ transform: translate3d(0,0,500px)}
+			from{ transform: translate3d(0,0,-1000px)} }
+
+		@keyframes jump{0%{} 100%{transform: rotate3d(0,1,0,360deg); } }
+
+	
+
+
+		#two{ opacity: 0 }	
+		#one2:hover ~ #two { opacity: 1 ; }
+		#one2:hover {width: 30vw; left: -3vw; top: 30vw;}
+		
+
+		
+	
+		
+		.h_1 { grid-area: 2 / 9 / 4 / 11 ; width: 30%; opacity: 100%; animation: jump s forwards infinite;}
+		.h_2 { grid-area: 1 / 7 / 3 / 9 ; width: 30%; opacity: 100%; animation: a1 s forwards infinite;}
+
+		
+
+
+		.b_3 { grid-area: 5 / 5 / 5 / 5 ; width: 700px; top: -70px; opacity: 100%; animation: b1 30s forwards infinite;}
+		.b_3_1 { grid-area: 1 / 1 / 7 / 7 ; width: 800px; top: -1200px; opacity: 100%; animation: b6 60s forwards infinite;}
+		
+		.b_4 { grid-area: 1 / 1 / 1 / 1 ; width: 1000px; top: -800px; opacity: 100%; animation: b2 15s forwards infinite;}
+		.b_5 { grid-area: 3 / 3 / 3 / 3 ; width: 200px; height: 1800px; top: -100px; opacity: 100%; animation: b3 13s forwards infinite;}
+		.b_6 { grid-area: 3 / 3 / 3 / 3 ; width: 200px; height: 1100px; top: -30px; opacity: 100%; animation: b4 20s forwards infinite;}
+		.b_7 { grid-area: 3 / 3 / 3 / 3 ; width: 250px; height: 1000px; top: -20px; opacity: 100%; animation: b5 40s forwards infinite;}
+
+
+		@keyframes a1 { 0% { left: 100%; top: 100%;  } 100%{ left: -50%;top: 0%;  }}
+
+	    
+	    @keyframes b1 { 0% { left: 30%; opacity: 60%;  }  100%{ left: 100%; opacity: 0%; }}
+		@keyframes b2 { 0% { left: 60%; opacity: 0%;  }  100%{ left: 0%; opacity: 70%; }}
+		@keyframes b3 { 0% { left: 50%; opacity: 0%;  }  100%{ left: 60%; opacity: 100%; }}
+		@keyframes b4 { 0% { left: 70%; opacity: 0%;  }  100%{ left: 110%; opacity: 80%; }}
+		@keyframes b5 { 0% { left: 10%; opacity: 90%;  }  100%{ left: -10%; opacity: 0%; }}
+		@keyframes b6 { 0% { left: 10%; opacity: 0%;  }  100%{ left: 20%; opacity: 70%; }}
+
+
+		
+
+		.b_8 { grid-area: 1 / 1 / 3 / 3 ; width: 650px; top: 400px; opacity: 100%; animation: b7 5s forwards infinite;}
+		.b_9 { grid-area: 7 / 7 / 7 / 7 ; width: 800px; left: 1100px; top: -300px; opacity: 100%; animation: b8 20s forwards infinite;}
+
+		@keyframes b7 { 0% { left: -10%; opacity: 0%; transform: rotate(-30deg);  }  100%{ left: -10%; opacity: 70%; transform: rotate(-10deg); }}
+	    @keyframes b8 { 0% { opacity: 0%; transform: rotate(-20deg);  }  100%{ opacity: 80%; transform: rotate(10deg); }}
+	
+
+
+       .b_10 { grid-area: 1 / 1 / 11 / 11 ; width: 450px; top: 0px; left: 1100px; animation: b9 5s forwards infinite;}
+
+       .b_11 { grid-area: 3 / 3 / 3 / 3 ; width: 500px; top: -100px; opacity: 100%; animation: b10 7s forwards infinite;}
+       
+       .b_12 { grid-area: 3 / 3 / 3 / 3 ; width: 350px; top: 200px; opacity: 100%; animation: b11 15s forwards infinite;}
+
+       .b_13 { grid-area: 3 / 3 / 3 / 3 ; width: 300px; top: 300px; opacity: 100%; animation: b12 10s forwards infinite;}
+       
+       .b_14 { grid-area: 3 / 3 / 3 / 3 ; width: 550px; top: -400px; opacity: 100%; animation: b13 25s forwards infinite;}
+
+       .b_14_1 { grid-area: 3 / 3 / 3 / 3 ; width: 400px; top: 200px; opacity: 100%; animation: b13_1 18s forwards infinite;}
+      
+       
+     
+
+
+		@keyframes b9 { 0% { left: 10%; opacity: 100%; transform: rotate(-2deg); } 100%{ left: 12%; opacity: 0%;transform: rotate(1deg);  }}
+		
+		@keyframes b10 { 0% { left: 63%; opacity: 0%; transform: rotate(2deg);  }  100%{ left: 61%; opacity: 80%; transform: rotate(-2deg);}}
+
+		@keyframes b11 { 0% { left: 2%; opacity: 0%; transform: rotate(6deg);  }  100%{ left: 0%; opacity: 100%; transform: rotate(-6deg);}}
+
+		@keyframes b12 { 0% { left: 80%; opacity: 100%; transform: rotate(-2deg); } 100%{ left: 82%; opacity: 0%;transform: rotate(2deg);  }}
+	
+	    @keyframes b13 { 0% { left: 23%; opacity: 60%; transform: rotate(-2deg); } 100%{ left: 25%; opacity: 0%;transform: rotate(2deg);  }}
+
+	    @keyframes b13_1 { 0% { left: 53%; opacity: 90%; transform: rotate(-5deg); } 100%{ left: 55%; opacity: 0%;transform: rotate(5deg);  }}
+	
+
+
+	   .b_15 { grid-area: 3 / 3 / 3 / 3 ; width: 2000px; top: -100px; opacity: 100%; animation: b14 8s forwards infinite;}
+       @keyframes b14 { 0% { left: 20%; opacity: 0%; transform: rotate(3deg); } 100%{ left: 21%; opacity: 100%;transform: rotate(-5deg);  }}
+
+        .b_16 { grid-area: 3 / 3 / 3 / 3 ; width: 800px; top:-330px; opacity: 100%; animation: b15 20s forwards infinite;}
+       @keyframes b15 { 0% { left: -15%; opacity: 0%; transform: rotate(3deg); } 100%{ left: -13%; opacity: 60%;transform: rotate(-5deg);  }}
+
+
+
+         .b_17 { grid-area: 3 / 3 / 3 / 3 ; width: 105%; top:-100px; opacity: 100%; animation: b16 16s forwards infinite;}
+       @keyframes b16 { 0% { left: -3%; opacity: 0%; } 100%{ left: 0%; opacity: 80%; }}
+
+
+
+
+         .b_18 { grid-area: 3 / 3 / 3 / 3 ; width: 150px;  animation: b17 15s forwards infinite;}
+       @keyframes b17 { 0% { left: -20%; top: 50%; opacity: 80%; transform: rotate(-10deg);}
+						100%{ left: 50%;top: -200px; opacity: 80%; transform: rotate(30deg);}}
+
+		.b_19 { grid-area: 3 / 3 / 3 / 3 ; width: 130px;  animation: b18 30s forwards infinite;}
+       @keyframes b18 { 0% { left: 100%; top: 20%; opacity: 80%; transform: rotate(-80deg);}
+						100%{ left: 50%;top: 110%;; opacity: 80%; transform: rotate(40deg);}}
+
+	
+	
+	   .b_21 { grid-area: 3 / 3 / 3 / 3 ; width: 350px;  animation: b20 40s forwards infinite;}
+       @keyframes b20 { 0% { left: -10%; top: 45%; opacity: 90%; transform: rotate(-5deg);}
+						100%{ left: 110%;top: 35%; opacity: 90%; transform: rotate(40deg);}}
+	
+
+
+				.pp {position: absolute; left: 50; top: 50%; animation: jump2 20s infinite cubic-bezier(.2,.6,.41,.8); z-index: -100px }
+				@keyframes jump2	{ 0% { opacity: 80%;transform: rotate(0deg);}
+								100%{  opacity: 20%; transform: rotate(-5deg);}}
+
+
+
+
+
+ 
+
+ </style>
+
+
+<body>
+
+		<section class="grid"> 
+
+
+	   
+		
+		
+	
+		
+
+	
+
+	
+	
+		<img src= "b3.png" id="" class="b_5">
+		<img src= "b3.png" id="" class="b_6">
+		<img src= "b3.png" id="" class="b_7">
+	
+
+
+	
+
+		<img src= "b6.png" id="" class="b_10">
+		<img src= "b8.png" id="" class="b_11">
+		<img src= "b8.png" id="" class="b_12">
+		<img src= "b6.png" id="" class="b_13">
+		<img src= "b7.png" id="" class="b_14">
+		<img src= "b7_1.png" id="" class="b_14_1">
+
+
+
+	
+     
+       	<img src= "b9.png" id="" class="b_16">	
+
+       	<img src= "w1.png" id="" class="b_17">	
+
+
+
+		
+		<img src= "h6_1.png" id="one2" class="b_21">	
+		<img src= "" id="" class="h_2">
+	
+		
+
+		<div></div>
+
+
+
+
+	</section>
+
+		
+
+
+
+		<script type="text/javascript">
+
+				// 버블 배경
+
+				document.body.style.height = window.innerHeight + "px";
+				setInterval(star,70);
+				function star(){
+					var a = document.createElement("img");
+					a.style.left = randomBH(0,window.innerWidth) + "px";
+					a.style.top = randomBH(20, (window.innerHeight - 200)) + "px";
+					a.src = "st.png";
+					a.addEventListener("animationend", function(e){ 
+						e.target.parentNode.removeChild(e.target);
+					});
+					document.body.appendChild(a);
+					}
+						
+					function randomBH(min, max) {
+					  min = Math.ceil(min);
+					  max = Math.floor(max);
+					  return Math.floor(Math.random() * (max - min + 1)) + min;
+					}
+
+					window.onmousemove = function(e){
+						document.body.style.perspectiveOrigin = e.clientX + "px " + e.clientY+"px";
+					}
+					
+
+				
+								
+
+						
+						// 순환 팝업		
+
+						var timeout; // Variable to store the timeout ID
+						// Retrieve the pop-up count from local storage or initialize it to 0
+						var popupCount = localStorage.getItem("popupCount") || 0;
+
+						// Function to display the pop-up window and reload the page
+						function displayPopup() {
+						  popupCount++; // Increment the pop-up count
+
+						  // Save the updated count in local storage
+						  localStorage.setItem("popupCount", popupCount);
+
+
+
+						  var popup = document.createElement("div");
+						  popup.style.position = "fixed";
+						  popup.style.top = "50%";
+						  popup.style.left = "50%";
+						  popup.style.transform = "translate(-50%, -50%)";
+						  popup.style.background = "transparent";
+						  popup.style.padding = "35px";
+						  popup.style.width = "300px";
+						  popup.style.border = "1.5px solid white";
+						  popup.style.borderRadius = "10px"; 
+						  popup.style.color = "white"; 
+						  popup.style.textAlign = "center";
+						  popup.style.fontSize = "25px"; // Font size
+						  popup.textContent = "Infinite Circulation #" + popupCount;
+
+						  document.body.appendChild(popup);
+
+						  // Perform any desired actions when the pop-up appears
+
+						  // Delay the page reload by 3 seconds (adjust as needed)
+						  setTimeout(function() {
+						    location.reload(); // Reload the page to go back to the initial state
+						  }, 5000);
+
+						  clearTimeout(timeout); // Clear the timeout to prevent recursive pop-ups
+						}
+
+					
+						// Function to start the timer
+						function startTimer() {
+						  timeout = setTimeout(displayPopup, 3000); // Set a timeout of 10 seconds (adjust as needed)
+						}
+
+						// Event listener for mouse movement
+						document.addEventListener("mousemove", function() {
+						  clearTimeout(timeout); // Clear the timeout on mouse movement
+						  startTimer(); // Start the timer again
+						});
+
+						// Initial call to start the timer
+						startTimer();
+
+
+
+
+					
+							var poet = "Looking into XXX space technology ";
+							var poetArr = poet.split("");
+							console.log(poetArr);
+							var myTimer = setInterval(print,100);
+							var k = 0;
+							function print(){ poetText.innerHTML += poetArr[k];
+							k++;
+							if (k == poetArr.length ){clearInterval(myTimer);
+							}
+							}
+
+
+							one2.onclick = function(){
+						location.href = "index.html";
+				 	};
+
+
+				 	// 산호로 랜덤 
+					
+						var im = ["s3", "s4", "s5", "s6","s7","s8"]; 
+						var container = document.getElementById("image-container");
+				
+
+
+						for(var i=0; i<50; i++){
+							var c = document.createElement("img");
+							c.src = im[randomBH(0,5)] + ".png";
+							c.style.width = randomBH(10,140) + "px";
+							c.style.height = "auto"; 
+							c.className = "pp";
+							c.style.left = Math.random()*screen.availWidth + "px";
+							c.style.top = randomBH(550,1000) + "px";
+							
+							document.body.appendChild(c);
+						}
+						
+
+						function randomBH(min, max) {
+							  min = Math.ceil(min);
+							  max = Math.floor(max);
+						  return Math.floor(Math.random() * (max - min + 1)) + min;
+		} 
+		
+
+
+
+							
+			</script>
+
+
+
+</body>
+</html>

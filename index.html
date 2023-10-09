@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rain and Snow</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="back.css" />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: rgb(41, 49, 73);
+      }
+
+      canvas,
+      img,
+      div {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+      }
+      canvas {
+        pointer-events: none;
+      } /* 캔버스를 클릭 못하게 */
+
+      .cursor {
+        pointer-events: auto;
+        cursor: pointer;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 3;
+      }
+
+      .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(255, 255, 255);
+        width: 250px;
+        height: 100px;
+        padding: 25px;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      #image3:hover {
+        z-index: 9999;
+        opacity: 1;
+      }
+      #white-background {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(255, 255, 255, 1);
+        display: none;
+        z-index: 9999;
+      }
+
+
+
+    </style>
+  </head>
+
+  <body>
+
+    <script src="san.js"></script>
+ 
+    
+<div class="g1">
+      <img src="da/b5.png" class="clickable-image cursor no_6 random"id="image3"height="170"/>
+      <img src="da/b6.png"class="clickable-image cursor no_1 random" id="image4"width="50"/>
+      <img src="da/b6.png" class="clickable-image cursor no_2 random" id="image5" height="250"/>
+      <img src="da/b8.png" class="clickable-image cursor no_3 random" id="image6" height="180"/>
+      <img src="da/b11.png" class="clickable-image cursor no_4 random" id="image7" height="280"/>
+      <img src="da/b4.png" class="clickable-image cursor no_5 random" id="image8" height="120"/>
+      <img src="da/b4.png"class="clickable-image cursor no_7 random"id="image9" height="210"/>
+    </div>
+
+<div class="g2">
+    <img src="da/b5.png" class="clickable-image cursor no_1 random" id="image9" height="150" /> 
+    <img src="da/b6.png" class="clickable-image cursor no_2 random" id="image10" width="85"  />
+    <img src="da/b6.png" class="clickable-image cursor no_3 random" id="image11" height="200"/>
+    <img src="da/b8.png" class="clickable-image cursor no_4 random" id="image12" height="270"/> 
+    <img src="da/b11.png" class="clickable-image cursor no_5 random"id="image13" height="120"/> 
+    <img src="da/b4.png" class="clickable-image cursor no_6 random" id="image14" height="170"/> 
+    <img src="da/b11.png" class="clickable-image cursor no_8 random"id="image15" height="140"/> 
+    <img src="da/b4.png" class="clickable-image cursor no_9 random" id="image16" height="230"/> 
+  </div> 
+
+    <!-- <img src="da/b1.png" class="clickable-image cursor" id="image1" />
+    <img src="da/b2.png" class="clickable-image cursor" id="image2" /> -->
+
+    <!-- <a href="index2.html">
+    <img src="da/b3.png" class="clickable-image cursor" id="image3" width="300"/>
+    </a>  -->
+
+    <!-- 다른 이미지 추가 가능 -->
+
+    <div id="customAlert" class="modal">
+      <div class="modal-content"></div>
+    </div>
+
+    <!-- 글리치 -->
+    <!-- <div class="glitch">
+      <div class="glitch_content"></div>
+      <div class="glitch_content"></div>
+      <div class="glitch_content"></div>
+      <div class="glitch_content"></div>
+      <div class="glitch_content"></div>
+    </div> -->
+
+    <audio id="rainAudio" src="rain_2.mp3" loop></audio>
+    <canvas id="rainCanvas"></canvas>
+    <canvas id="snowCanvas"></canvas>
+
+    <script src="new.js"></script>
+    <script src="hide.js"></script>
+    <script src="rain.js"></script>
+    <script src="snow.js"></script>
+
+
+    <div id="white-background"></div>
+  </body>
+</html>
